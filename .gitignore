@@ -1,0 +1,7 @@
+.idea/
+*.csv/
+*.html/
+
+jobs.csv
+jobs.html
+spider.log
