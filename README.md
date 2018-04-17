@@ -14,7 +14,7 @@ scrapy crawl job_search -a keyword=<insert keyword> -a category=<category of job
 
 Arguements are optional
 
-##### Example - 
+#### Example - 
 
 scrapy crawl job_search -a keyword=analyst -a category=Accounting
 
