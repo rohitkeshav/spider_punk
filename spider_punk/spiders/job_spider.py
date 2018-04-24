@@ -16,6 +16,13 @@ class JobsSpider(Spider):
 
         super().__init__(**kwargs)
 
+    @staticmethod
+    def save_as_csv(lod, headers, fname):
+        with open(fname + '.csv', 'w') as f:
+            fobj = DictWriter(f, fieldnames=headers)
+            fobj.writeheader()
+            fobj.writerows(lod)
+
     def start_requests(self):
 
         yield Request(url='https://www.federalreserve.gov/start-job-search.htm', callback=self.parse)
@@ -57,10 +64,3 @@ class JobsSpider(Spider):
             time.sleep(5)
 
         return driver
-
-
-def save_as_csv(lod, headers, fname):
-    with open(fname + '.csv', 'w') as f:
-        fobj = DictWriter(f, fieldnames=headers)
-        fobj.writeheader()
-        fobj.writerows(lod)
