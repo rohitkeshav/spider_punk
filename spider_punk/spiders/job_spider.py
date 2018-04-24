@@ -1,8 +1,8 @@
 import time
-from csv import DictWriter
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from bs4 import BeautifulSoup
+from spider_punk import utils
 from scrapy import Spider, Request
 
 
@@ -15,13 +15,6 @@ class JobsSpider(Spider):
         self.category = category
 
         super().__init__(**kwargs)
-
-    @staticmethod
-    def save_as_csv(lod, headers, fname):
-        with open(fname + '.csv', 'w') as f:
-            fobj = DictWriter(f, fieldnames=headers)
-            fobj.writeheader()
-            fobj.writerows(lod)
 
     def start_requests(self):
 
@@ -43,7 +36,7 @@ class JobsSpider(Spider):
         for j_obj in per_job_data:
             retval.append(dict(zip(headers, [data.get_text() for data in j_obj.find_all('div', attrs={'class': 'contentlinepanel'})])))
 
-        save_as_csv(retval, headers, 'jobs')
+        utils.save_as_csv(retval, headers, 'jobs')
 
     def job_search_help(self, base_url):
         driver = webdriver.Chrome(executable_path='../../chromedriver')
