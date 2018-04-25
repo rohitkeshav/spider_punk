@@ -10,7 +10,7 @@ Scrapy spider for jobs at Federal Reserve - https://www.federalreserve.gov/start
 
 ### RUN - 
 
-scrapy crawl job_search -a keyword=<insert keyword> -a category=<category of jobs>
+scrapy crawl job_search -a keyword=*insert keyword* -a category=*category of jobs*
 
 Arguements are optional
 
