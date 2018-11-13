@@ -1,5 +1,5 @@
 # Spider Punk
-Scrapy spider for jobs at Federal Reserve - https://www.federalreserve.gov/start-job-search.htm
+A Scrapy based webspider for jobs at Federal Reserve - https://www.federalreserve.gov/start-job-search.htm
 
 
 ### Setup (Requires python 3.6 env) - 
