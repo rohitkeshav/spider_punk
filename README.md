@@ -2,13 +2,13 @@
 Scrapy spider for jobs at Federal Reserve - https://www.federalreserve.gov/start-job-search.htm
 
 
-### SETUP (Requires python 3.6 env) - 
+### Setup (Requires python 3.6 env) - 
 
   * git clone https://github.com/rohitkeshav/spider_punk.git`
   * pip install requirements
 
 
-### RUN - 
+### Run - 
 
 ```scrapy crawl job_search -a keyword=*insert keyword* -a category=*category of jobs*```
 
